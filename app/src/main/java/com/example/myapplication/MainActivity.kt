@@ -12,15 +12,14 @@ class MainActivity : AppCompatActivity() {
 
         val knopka =findViewById<View>(R.id.Play1)
         val knopka3 =findViewById<View>(R.id.Play10)
-        val knopka1 =findViewById<View>(R.id.Exit1)
+        val exitButton =findViewById<View>(R.id.Exit1)
 
         knopka.setOnClickListener {
         val intent = Intent(this, TiktakActivity::class.java)
         startActivity(intent)
         }
-        knopka1.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+        exitButton.setOnClickListener {
+            finishAffinity()
         }
         knopka3.setOnClickListener {
             val intent = Intent(this, PlayersActivity::class.java)
