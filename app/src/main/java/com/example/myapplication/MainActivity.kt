@@ -10,20 +10,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val knopka =findViewById<View>(R.id.Play1)
-        val knopka3 =findViewById<View>(R.id.Play10)
-        val exitButton =findViewById<View>(R.id.Exit1)
+        initViews()
 
-        knopka.setOnClickListener {
-        val intent = Intent(this, TiktakActivity::class.java)
-        startActivity(intent)
+    }
+
+    private fun initViews() {
+        val playVsBotBtn = findViewById<View>(R.id.playVsBotButton)
+        val playVsPlayerBtn = findViewById<View>(R.id.playVsPlayerButton)
+        val exitButton = findViewById<View>(R.id.exit)
+
+        playVsBotBtn.setOnClickListener {
+            startActivity(Intent(this, TiktakActivity::class.java))
+        }
+        playVsPlayerBtn.setOnClickListener {
+            startActivity(Intent(this, PlayersActivity::class.java))
         }
         exitButton.setOnClickListener {
             finishAffinity()
-        }
-        knopka3.setOnClickListener {
-            val intent = Intent(this, PlayersActivity::class.java)
-            startActivity(intent)
         }
     }
 }

@@ -10,14 +10,19 @@ class XwinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_xwin)
 
-        val knopka2 = findViewById<View>(R.id.play4)
-        val knopka = findViewById<View>(R.id.exit4)
+        initViews();
 
-        knopka.setOnClickListener {
+    }
+
+    private fun initViews() {
+        val playAgainBtn = findViewById<View>(R.id.playAgainButton)
+        val exitBtn = findViewById<View>(R.id.exitToAboutScreen)
+
+        exitBtn.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
-        knopka2.setOnClickListener {
+        playAgainBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

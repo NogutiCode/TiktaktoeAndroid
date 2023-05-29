@@ -11,14 +11,17 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        val knopka1 = findViewById<View>(R.id.play3)
-        val vihod = findViewById<View>(R.id.exit3)
+        initViews()
+    }
 
-        knopka1.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+    private fun initViews() {
+        val playAgainBtn = findViewById<View>(R.id.playAgainButton)
+        val exitBtn = findViewById<View>(R.id.exitFromProgram)
+
+        playAgainBtn.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
-        vihod.setOnClickListener {
+        exitBtn.setOnClickListener {
             finishAffinity()
         }
     }

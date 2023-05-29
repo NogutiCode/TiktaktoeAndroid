@@ -7,7 +7,7 @@
     tools:context=".PlayersActivity">
 
     <Button
-        android:id="@+id/Exit10"
+        android:id="@+id/exitToAboutScreen"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"

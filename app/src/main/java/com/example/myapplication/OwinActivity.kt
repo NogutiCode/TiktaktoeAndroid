@@ -10,17 +10,19 @@ class OwinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_owin)
 
+        initViews()
 
-        val knopka2 = findViewById<View>(R.id.play5)
-        val knopka = findViewById<View>(R.id.exit5)
+    }
 
-        knopka.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+    private fun initViews(){
+        val playAgainBtn = findViewById<View>(R.id.playAgainButton)
+        val exitBtn = findViewById<View>(R.id.exitToAboutScreen)
+
+        exitBtn.setOnClickListener {
+            startActivity(Intent(this, AboutActivity::class.java))
         }
-        knopka2.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        playAgainBtn.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

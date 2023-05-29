@@ -11,14 +11,18 @@ class WinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_win)
 
-        val knopka2 = findViewById<View>(R.id.Play2)
-        val knopka = findViewById<View>(R.id.Exit2)
+        initViews()
+    }
 
-        knopka.setOnClickListener {
+    private fun initViews() {
+        val playAgainBtn = findViewById<View>(R.id.playAgainButton)
+        val exitBtn = findViewById<View>(R.id.exitToAboutScreen)
+
+        exitBtn.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
-        knopka2.setOnClickListener {
+        playAgainBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
